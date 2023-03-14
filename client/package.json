@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@rollup/plugin-alias": "^4.0.3",
     "pinia": "^2.0.33",
     "vue": "^3.2.45",
     "vue-router": "4"

@@ -1,11 +1,13 @@
 <template>
     <p>
-        {{ store.name }}
+        {{ name }}
     </p>
 </template>
 
 <script setup>
-import { userCustomerStore } from '@/stores/customer';
-
-const store = userCustomerStore();
+import { useCustomerStore } from '@/stores/customers';
+import { storeToRefs } from 'pinia';
+ 
+const store = useCustomerStore();
+const { name } = storeToRefs(store);
 </script>
