@@ -1,14 +1,16 @@
-<script setup>
-</script>
-
 <template>
-  <div>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
+  <div id="nav" class="flex">
+    <NavMenu class="h-screen bg-base-200" />
+    <div class="flex flex-col">
+      <NavBar class="w-screen"/>
+      <router-view />
     </div>
-    <router-view />
   </div>
 </template>
 
-<style scoped>
-</style>
+<script setup>
+import NavBar from "@/components/NavBar.vue";
+import NavMenu from "./components/NavMenu.vue";
+</script>
+
+<style scoped></style>
