@@ -3,7 +3,7 @@
         <Table></Table>
     </div>
     <p>
-        {{ name }}
+        {{ customerData }}
     </p>
 </template>
 
@@ -11,7 +11,13 @@
 import { useCustomerStore } from '@/stores/customers';
 import { storeToRefs } from 'pinia';
 import Table from '@/components/table.vue';
- 
+import { onMounted } from 'vue'
+
+
 const store = useCustomerStore();
-const { name } = storeToRefs(store);
+const { customerData } = storeToRefs(store);
+
+onMounted(() => {
+    store.getCustomers();
+});
 </script>

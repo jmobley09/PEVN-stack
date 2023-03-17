@@ -26,6 +26,7 @@ const createCustomer = async (req, res) => {
 const getAllCustomers = async (req, res) => {
   try {
     const customers = await Customer.findAll({
+      attributes: { exclude: ['createdAt', 'updatedAt']},
       order: [["createdAt", "DESC"]],
     });
     return res.status(200).json({ customers });
